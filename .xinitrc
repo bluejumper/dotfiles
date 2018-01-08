@@ -10,7 +10,6 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 if [ -f $sysresources ]; then
     xrdb -merge $sysresources
 fi
-
 if [ -f $sysmodmap ]; then
     xmodmap $sysmodmap
 fi
@@ -18,12 +17,11 @@ fi
 if [ -f "$userresources" ]; then
     xrdb -merge "$userresources"
 fi
-
 if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
-# start some nice programs
+# Launch specified programs.
 
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
@@ -32,9 +30,5 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-# Set X keyboard layout and repeat rate
-setxkbmap -layout gb
-xset r rate 300 30
-
-# ### Launch window manager
-#exec i3
+setxkbmap gb && xset r rate 300 40
+awesome

@@ -1,11 +1,26 @@
-# Just the confs.
+# Caches and logs.
 .oh-my-zsh/cache
 .oh-my-zsh/log
 .config/nvim/.cache
-.config/nvim/repos
 .config/nvim/cache_nvim
 .config/nvim/state_nvim.vim
 .config/pgcli/history
 .config/pgcli/log
+
+.histfile
+.bash_history
+.zsh_history
+.zsh-update
+.zcompdump
+.zcompdump*
+.Xauthority
+
+# Directories.
+.config/chromium
+.config/qutebrowser
+.config/ranger
+.config/nvim/repos
+
+# Installed packages.
 .packages.foreign
 .packages.native
