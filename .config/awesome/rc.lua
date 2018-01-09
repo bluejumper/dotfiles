@@ -49,6 +49,7 @@ editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
 syslock = "physlock"
+file_manager = "spacefm"
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
@@ -320,7 +321,11 @@ clientkeys = gears.table.join(
 -- awesome.
     awful.key({ modkey, "Shift"   }, "q",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
- 
+
+-- Application bindings.
+    awful.key({ modkey,           }, "e",      function () awful.spawn(file_manager)	     end,
+              {description = "launch file manager", group = "launcher"}),
+   
 -- Focus manipulation.
     awful.key({ modkey,           }, "j",
         function ()
