@@ -22,13 +22,13 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(git)
 
+# oh-my-zsh installation.
+export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # User configurations.
 
 # -- environment
-	# oh-my-zsh installation.
-	export ZSH=~/.oh-my-zsh
 	# ZSH_CUSTOM=/path/to/new-custom-folder
 	export SCRIPTS=~/Scripts 
 
