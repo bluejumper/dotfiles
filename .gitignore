@@ -7,6 +7,7 @@
 .config/nvim/.netrwhist
 .config/pgcli/history
 .config/pgcli/log
+.config/vis/vis.log
 
 .histfile
 .bash_history

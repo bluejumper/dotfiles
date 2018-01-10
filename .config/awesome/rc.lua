@@ -268,7 +268,7 @@ globalkeys = gears.table.join(
 -- Launcher.
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
-    awful.key({ modkey }, "p", function() menubar.show() end,
+    awful.key({ modkey }, "b", function() menubar.show() end,
               {description = "run from menubar", group = "launcher"}),
  
 -- Tag navigation.
@@ -356,7 +356,7 @@ clientkeys = gears.table.join(
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
               {description = "swap with previous client by index", group = "client"}),
 
-    awful.key({ modkey,           }, "b", function (c) c:swap(awful.client.getmaster()) end,
+    awful.key({ modkey,           }, "p", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
     awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
               {description = "move to screen", group = "client"}),
@@ -367,7 +367,7 @@ clientkeys = gears.table.join(
             c:raise()
         end,
               {description = "toggle fullscreen", group = "client"}),
-    awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
+    awful.key({ modkey, "Control" }, "f",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
