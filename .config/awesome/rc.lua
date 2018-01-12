@@ -50,6 +50,10 @@ editor_cmd = terminal .. " -e " .. editor
 
 syslock = "physlock"
 file_manager = "spacefm"
+
+vol_inc = "pactl set-sink-volume 0 +5%"
+vol_dec = "pactl set-sink-volume 0 -5%"
+
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
@@ -245,15 +249,22 @@ globalkeys = gears.table.join(
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Control" }, "e", function () awful.spawn(syslock) end,
               {description = "lock system", group = "awesome"}),
+
+    -- Keybindings.
+    awful.key({ modkey, "Control" }, "]", function () awful.spawn(vol_inc) end,
+              {description = "increase vol 5%", group = "environment"}),
+    awful.key({ modkey, "Control" }, "[", function () awful.spawn(vol_dec) end,
+              {description = "decrease vol 5%", group = "environment"}),
+ 
     -- Show.
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description = "show help", group="awesome"}),
     awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
               {description = "show main menu", group = "awesome"}),
-   -- Prompt.
+
+    -- Prompt.
     awful.key({ modkey },            "x",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
-
     awful.key({ modkey },            "r",
               function ()
                   awful.prompt.run {
