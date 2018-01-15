@@ -281,7 +281,9 @@ globalkeys = gears.table.join(
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey }, "b", function() menubar.show() end,
               {description = "run from menubar", group = "launcher"}),
- 
+    awful.key({ modkey,           }, "e",      function () awful.spawn(file_manager)	     end,
+              {description = "launch file manager", group = "launcher"}),
+
 -- Tag navigation.
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
@@ -332,10 +334,6 @@ clientkeys = gears.table.join(
 -- awesome.
     awful.key({ modkey, "Shift"   }, "q",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
-
--- Application bindings.
-    awful.key({ modkey,           }, "e",      function () awful.spawn(file_manager)	     end,
-              {description = "launch file manager", group = "launcher"}),
    
 -- Focus manipulation.
     awful.key({ modkey,           }, "j",
