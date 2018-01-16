@@ -9,6 +9,17 @@ let hintcharacters = "asdfghjkl"
 
 let locale="uk"
 
+" --- Keybindings.
+
+map O :open!<Space>
+
+" Better left-hand navigation.
+unmap W a
+map W goBack
+map S goForward
+map E previousTab
+map D nextTab
+
 " Point to local config.
 let homedirectory="/home/blue"
 let configpath="~/.config/.cVimrc"
