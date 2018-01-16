@@ -1,0 +1,10 @@
+set smoothscroll
+set linkanimations
+
+let scrollstep=80
+let scrollduration=400
+
+let barposition = "bottom"
+let hintcharacters = "asdfghjkl"
+
+let locale="uk"
