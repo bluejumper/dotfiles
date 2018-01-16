@@ -8,3 +8,8 @@ let barposition = "bottom"
 let hintcharacters = "asdfghjkl"
 
 let locale="uk"
+
+" Point to local config.
+let homedirectory="/home/blue"
+let configpath="~/.config/.cVimrc"
+set localconfig
