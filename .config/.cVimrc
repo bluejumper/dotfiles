@@ -20,6 +20,9 @@ map S goForward
 map E previousTab
 map D nextTab
 
+map J nextTab
+map K previousTab
+
 " Point to local config.
 let homedirectory="/home/blue"
 let configpath="~/.config/.cVimrc"
