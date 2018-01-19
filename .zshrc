@@ -30,7 +30,7 @@ source $ZSH/oh-my-zsh.sh
 
 # -- environment
 	# ZSH_CUSTOM=/path/to/new-custom-folder
-	export SCRIPTS=~/Scripts 
+	source ~/.alias
 
 	export PATH=~/go/bin:$PATH # Golang.
 	export GOPATH=~/go
@@ -46,10 +46,6 @@ source $ZSH/oh-my-zsh.sh
 	alias minecraft="$SCRIPTS/minecraft.sh"
 	alias rgr="ranger"
 	#alias ku="kubectl"
-
-# -- scripts
-	source $SCRIPTS/_packages.sh
-
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
