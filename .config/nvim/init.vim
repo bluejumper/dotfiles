@@ -47,4 +47,3 @@ set termguicolors
 colorscheme molokai
 
 " Keybindings.
-imap \ <Esc>
