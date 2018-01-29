@@ -45,6 +45,7 @@ source $ZSH/oh-my-zsh.sh
 	alias vbox="$SCRIPTS/vbox.sh"
 	alias minecraft="$SCRIPTS/minecraft.sh"
 	alias rgr="ranger"
+	alias ip="ip -c"
 	#alias ku="kubectl"
 
 # Compilation flags
