@@ -2,7 +2,7 @@
 # It will hold all of my alias shortcuts/links.
 
 # Directories
-#alias _git="cd ~/Git"
+alias Git-="cd ~/Git"
 
 # Scripts
 # Responsible for making my scripts accessible from terminal my environment.
