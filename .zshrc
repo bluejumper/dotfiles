@@ -37,13 +37,14 @@ source $ZSH/oh-my-zsh.sh
 	export GOPATH=~/go
 
 	export EDITOR="nvim"
+	export GIT="~/Git"
+	export SCRIPTS="~/sh/"
 
 # -- aliases
 	# directories
 	alias _html="cd /var/www/html"
 
 	# commands
-	alias vbox="$SCRIPTS/vbox.sh"
 	alias minecraft="$SCRIPTS/minecraft.sh"
 	alias rgr="ranger"
 	alias ip="ip -c"
