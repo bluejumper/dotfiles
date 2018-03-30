@@ -30,9 +30,8 @@ source $ZSH/oh-my-zsh.sh
 
 # -- environment
 	# ZSH_CUSTOM=/path/to/new-custom-folder
-	source ~/.alias
 
-	export PATH=~/bin:$PATH # User binaries.
+	#export PATH=~/bin:$PATH # User binaries.
 	export PATH=~/go/bin:$PATH # Golang.
 	export GOPATH=~/go
 
