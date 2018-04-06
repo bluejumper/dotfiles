@@ -39,6 +39,7 @@ source $ZSH/oh-my-zsh.sh
 	export GIT="~/Git"
 	export SCRIPTS="~/sh/"
 
+	export mnt="/run/media/blue/"
 # -- aliases
 	# directories
 	alias _html="cd /var/www/html"
