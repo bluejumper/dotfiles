@@ -47,6 +47,7 @@ source $ZSH/oh-my-zsh.sh
 	alias minecraft="$SCRIPTS/minecraft.sh"
 	alias rgr="ranger"
 	alias ip="ip -c"
+	alias hd="hexdump -C"
 	#alias ku="kubectl"
 
 # Compilation flags
