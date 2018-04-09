@@ -11,7 +11,7 @@ set_prompt () {
 
     PROMPT='
  -- ${c_RED}[${c_RESET}%n @%M${c_RED}]${c_RESET} ${c_CYAN}[${c_RESET} %4/ ${c_CYAN}]${c_RESET}
-	${c_bRED}\$${c_RESET}: '
+ \\\\ ${c_bRED}\$${c_RESET}: '
     RPROMPT="[${c_GREEN} %D{%R:%S} ${c_RESET}]"
 
     # ######### PROMPT #########
