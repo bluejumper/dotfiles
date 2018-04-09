@@ -48,7 +48,7 @@ source $ZSH/oh-my-zsh.sh
 	alias minecraft="$SCRIPTS/minecraft.sh"
 	alias rgr="ranger"
 	alias la="ls -lAh --color"
-	alias lss="ls -sh --color"
+	alias lss="ls -sh1 --color"
 	alias ip="ip -c"
 	alias hd="hexdump -C"
 	#alias ku="kubectl"
