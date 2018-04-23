@@ -46,10 +46,16 @@ beautiful.init("~/.config/awesome/themes/" .. "blue/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "termite"
-editor = os.getenv("EDITOR") or "nvim"
-editor_cmd = terminal .. " -e " .. editor
+terminal_exec = "termite -e "
 
-syslock = "physlock"
+editor = os.getenv("EDITOR") or "nvim"
+editor_cmd = terminal_exec .. editor
+
+-- System state commands.
+sys_lock = "physlock"
+sys_suspend = "physlock & systemctl suspend"
+sys_hibernate = "physlock & systemctl hibernate"
+
 file_manager = "spacefm"
 
 vol_inc = "pactl set-sink-volume 0 +5%"
@@ -248,7 +254,12 @@ globalkeys = gears.table.join(
               {description = "quit awesome", group = "awesome"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
-    awful.key({ modkey, "Control" }, "e", function () awful.spawn(syslock) end,
+
+    awful.key({ modkey, "Control" }, ",", function () awful.spawn(sys_lock) end,
+              {description = "lock system", group = "awesome"}),
+    awful.key({ modkey, "Control" }, ".", function () awful.spawn.with_shell(sys_suspend) end,
+              {description = "lock system", group = "awesome"}),
+    awful.key({ modkey, "Control" }, "/", function () awful.spawn.with_shell(sys_hibernate) end,
               {description = "lock system", group = "awesome"}),
 
     -- Keybindings.
