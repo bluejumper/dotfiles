@@ -26,7 +26,16 @@ plugins=(git)
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-# User configurations.
+# -- preferences
+	# vi-mode
+	#bindkey -e # zsh emacs-mode.
+	bindkey -v # zsh vi-mode!
+	export KEYTIMEOUT=10 # Delay between entering from 'viins' to 'vicmd'.
+
+	bindkey -M viins '^[[3~' delete-char # Delete
+	bindkey -M viins '^[[H' beginning-of-line # Home
+	bindkey -M viins '^[[F' end-of-line # End
+	# / vi-mode
 
 # -- environment
 	# ZSH_CUSTOM=/path/to/new-custom-folder
@@ -36,22 +45,23 @@ source $ZSH/oh-my-zsh.sh
 	export GOPATH=~/go
 
 	export EDITOR="nvim"
-	export GIT="~/Git"
-	export SCRIPTS="~/sh/"
 
-	export mnt="/run/media/blue/"
 # -- aliases
-	# directories
-	alias _html="cd /var/www/html"
+	# directories: ~alias
+	hash -d Git=/home/${USER}/Git
+	hash -d sh=/home/${USER}/sh
 
-	# commands
-	alias minecraft="$SCRIPTS/minecraft.sh"
+	hash -d mnt=/run/media/${USER}/
+
+	# commands: alias
+	alias minecraft="~sh/minecraft.sh"
 	alias rgr="ranger"
 	alias la="ls -lAh --color"
 	alias lss="ls -sh1 --color"
 	alias duu="du -hd 0"
 	alias ip="ip -c"
 	alias hd="hexdump -C"
+	alias bc="bc -q"
 	#alias ku="kubectl"
 
 # Compilation flags
