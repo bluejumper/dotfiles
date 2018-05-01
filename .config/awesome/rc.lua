@@ -48,6 +48,10 @@ beautiful.init("~/.config/awesome/themes/" .. "blue/theme.lua")
 terminal = "termite"
 terminal_exec = "termite -e "
 
+-- terminal_large: Modify an existing termite config to use a larger font size as defined here."
+terminal_large_fontsize = 14
+terminal_large = "termite -c /dev/stdin <<< $(sed '/\\(^font.*=.*[0-9]$\\)/s/[0-9]/"..terminal_large_fontsize.."/' ~/.config/termite/config)"
+
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal_exec .. editor
 
@@ -291,6 +295,8 @@ globalkeys = gears.table.join(
 -- Launcher.
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
+    awful.key({ modkey, "Shift"   }, "Return", function () awful.spawn.with_shell(terminal_large) end,
+              {description = "open a terminal (larger font)", group = "launcher"}),
     awful.key({ modkey }, "b", function() menubar.show() end,
               {description = "run from menubar", group = "launcher"}),
     awful.key({ modkey,           }, "e",      function () awful.spawn(file_manager)	     end,
