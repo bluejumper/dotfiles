@@ -4,23 +4,18 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/home/blue/.config/nvim/repos/github.com/Shougo/dein.vim
+set runtimepath+=/home/blue/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/home/blue/.config/nvim/')
-  call dein#begin('/home/blue/.config/nvim/')
+if dein#load_state('/home/blue/.cache/dein')
+  call dein#begin('/home/blue/.cache/dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/home/blue/.config/nvim/repos/github.com/Shougo/dein.vim')
+  call dein#add('/home/blue/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
   call dein#add('vim-airline/vim-airline')
-
-  " You can specify revision/branch/tag.
-  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
   " Required:
   call dein#end()
