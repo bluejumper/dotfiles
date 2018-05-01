@@ -18,3 +18,6 @@ echo "	\"Wrinkles should merely indicate where smiles have been.\" - Mark Twain"
 echo
 echo "	\"Nothing ever becomes real till it is experienced.\" - John Keats"
 echo
+echo "	\"Nothing is so fatiguing as the eternal hanging on of an uncompleted task.\" - William James"
+echo
+echo "	\"It takes as much energy to wish as it does to plan.\" - Eleanor Roosevelt"
