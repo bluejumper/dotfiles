@@ -52,6 +52,7 @@ terminal_exec = "termite -e "
 terminal_large_fontsize = 14
 terminal_large = "termite -c /dev/stdin <<< $(sed '/\\(^font.*=.*[0-9]$\\)/s/[0-9]/"..terminal_large_fontsize.."/' ~/.config/termite/config)"
 
+-- Editor.
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal_exec .. editor
 
@@ -59,6 +60,16 @@ editor_cmd = terminal_exec .. editor
 sys_lock = "physlock"
 sys_suspend = "physlock & systemctl suspend"
 sys_hibernate = "physlock & systemctl hibernate"
+
+-- Tab environments.
+tab_audio = "termite -e \"watch -n 600 paplay ~/sh/ding.wav\" &"..
+	"pavucontrol &"..
+	"audacious &"
+tab_management = "termite -e \"watch -n 2 --color ip -c addr\" &"..
+	"termite -e \"watch -n 2 ip route\" &"..
+	"termite -e \"watch -n 5 lsblk -f\" &"..
+	"termite -e \"journalctl -f\" &"..
+	"termite &"
 
 file_manager = "spacefm"
 
@@ -259,6 +270,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
 
+    -- Keybindings.
     awful.key({ modkey, "Control" }, ",", function () awful.spawn(sys_lock) end,
               {description = "lock system", group = "awesome"}),
     awful.key({ modkey, "Control" }, ".", function () awful.spawn.with_shell(sys_suspend) end,
@@ -266,11 +278,16 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Control" }, "/", function () awful.spawn.with_shell(sys_hibernate) end,
               {description = "lock system", group = "awesome"}),
 
-    -- Keybindings.
     awful.key({ modkey, "Control" }, "]", function () awful.spawn(vol_inc) end,
               {description = "increase vol 5%", group = "environment"}),
     awful.key({ modkey, "Control" }, "[", function () awful.spawn(vol_dec) end,
               {description = "decrease vol 5%", group = "environment"}),
+	      --
+    -- Environments.
+    awful.key({ modkey, "Mod1"     }, "8", function () awful.spawn.with_shell(tab_audio) end,
+              {description = "prepare 'audio' layout", group = "awesome"}),
+    awful.key({ modkey, "Mod1"     }, "9", function () awful.spawn.with_shell(tab_management) end,
+              {description = "prepare 'management' layout", group = "awesome"}),
  
     -- Show.
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
@@ -512,6 +529,7 @@ awful.rules.rules = {
           "Wpa_gui",
 
 	  "Spacefm",
+	  "SpeedCrunch",
   	},
 
         name = {
