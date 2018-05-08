@@ -1,3 +1,15 @@
+set termguicolors
+set relativenumber
+
+colorscheme molokai
+
+" Keep backup and temp files in ~/.vim/tmp
+set backup
+set backupdir=~/.vim/tmp
+set dir=~/.vim/swp
+
+" Keybindings.
+
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
@@ -33,13 +45,3 @@ syntax enable
 "endif
 
 "End dein Scripts-------------------------
-
-" Keep backup and temp files in ~/.vim/tmp
-set backup
-set backupdir=~/.vim/tmp
-set dir=~/.vim/swp
-
-set termguicolors
-colorscheme molokai
-
-" Keybindings.

@@ -28,6 +28,3 @@
 # Installed packages.
 .packages.foreign
 .packages.native
-
-# (There's a special reason to not commit this file)
-Scripts/bootvm.sh
