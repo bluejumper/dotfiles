@@ -529,8 +529,9 @@ awful.rules.rules = {
           "Sxiv",
           "Wpa_gui",
 
+	  "Gpick",
 	  "Spacefm",
-	  "SpeedCrunch",
+	  "uget-gtk",
   	},
 
         name = {

@@ -22,6 +22,8 @@
 .config/qutebrowser
 .config/ranger
 .config/nvim/repos
+.config/nvim/ftdetect
+.config/nvim/syntax
 
 # Installed packages.
 .packages.foreign
