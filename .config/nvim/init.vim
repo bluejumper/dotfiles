@@ -16,6 +16,7 @@ if dein#load_state('/home/blue/.cache/dein')
 
   " Add or remove your plugins here:
   call dein#add('vim-airline/vim-airline')
+  call dein#add('fatih/vim-go')
 
   " Required:
   call dein#end()

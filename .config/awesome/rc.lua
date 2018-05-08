@@ -67,8 +67,9 @@ tab_audio = "termite -e \"watch -n 600 paplay ~/sh/ding.wav\" &"..
 	"audacious &"
 tab_management = "termite -e \"watch -n 2 --color ip -c addr\" &"..
 	"termite -e \"watch -n 2 ip route\" &"..
-	"termite -e \"watch -n 5 lsblk -f\" &"..
+	"termite -e \"htop\" &"..
 	"termite -e \"journalctl -f\" &"..
+	"termite -e \"watch -n 5 lsblk -f\" &"..
 	"termite &"
 
 file_manager = "spacefm"

@@ -21,3 +21,5 @@ echo
 echo "	\"Nothing is so fatiguing as the eternal hanging on of an uncompleted task.\" - William James"
 echo
 echo "	\"It takes as much energy to wish as it does to plan.\" - Eleanor Roosevelt"
+echo
+echo "	\"Goal? Next 15 minutes.\" - Benayak Karki"
