@@ -45,7 +45,13 @@ makelink() {
 
 replacelink() {
 	rm $2 2>&1
-	ln -s $1 $2 && echo "() link replaced" || ")( link not replaced"
+	ln -s $1 $2 && echo "() link replaced" || echo ")( link not replaced"
+}
+
+makedir() {
+	if [ ! -e $1 ]; then
+		mkdir -p $1 && echo "() made dir ${1}" && return 0 || echo ")( couldn't make dir ${1}" && return 1
+	fi
 }
 
 backup() {
@@ -144,7 +150,7 @@ main() {
 			read -n 1 chosen; echo
 
 			if [ ${chosen,,} = "y" ]; then
-				makelink $repoFile $pathFile
+				makedir $(dirname $pathFile) && makelink $repoFile $pathFile
 			fi
 		fi
 		continue

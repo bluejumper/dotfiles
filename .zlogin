@@ -27,3 +27,5 @@ echo
 echo "	\"Any sufficiently advanced technology is indistinguishable from a rigged demo.\" - Andy Finkel"
 echo
 echo "	\"Don't put off for tomorrow what you can do today because if you enjoy it today, you can do it again tomorrow.\" - James A. Michener"
+echo
+echo "	\"Good programming is good writing.\" - John Shore"
