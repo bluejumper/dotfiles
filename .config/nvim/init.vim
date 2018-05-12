@@ -1,6 +1,6 @@
 " dein scripts --
 if &compatible
-  set nocompatible               " Be iMproved
+  set nocompatible "Be iMproved
 endif
 
 " Required
@@ -17,6 +17,7 @@ if dein#load_state('/home/blue/.cache/dein')
 	" Add or remove your plugins here:
 	call dein#add('itchyny/lightline.vim')
 	call dein#add('ap/vim-buftabline')
+	"call dein#add('zefei/vim-wintabs') " Doesn't play with lightline.vim
 	"call dein#add('fatih/vim-go')
 
 	" Required
@@ -36,9 +37,10 @@ syntax enable
 " end dein scripts --
 
 " Options (set) --
+set noshowmode " Disable editing mode display at bottom of tab.
+set hidden " Allow buffers to preserve modifications and state by becoming 'hidden'.
 set termguicolors
 colorscheme molokai
-set noshowmode
 
 " Keep backup and temp files in ~/.vim/tmp
 set backup
@@ -53,19 +55,31 @@ augroup numbertoggle
 	autocmd BufLeave,FocusLost	* set norelativenumber
 augroup END
 
+" Colour
+" vim-buftabline: suited for molokai.
+if exists('g:buftabline_numbers')
+	hi BufTabLineCurrent	guifg=#F8F8F2	guibg=#111111 gui=bold
+	hi BufTabLineActive	guifg=#F8F8F2	guibg=#606060
+	hi BufTabLineHidden	guifg=#A0A0A0	guibg=#454545
+	hi BufTabLineFill			guibg=#303030
+endif
+
 " Variables (let) --
-" vim-buftabline: show buffer number
- let g:buftabline_numbers = 1
+" vim-buftabline: display buffer number
+let g:buftabline_numbers = 1
 
 " Keybindings --
-" vim-buftabline: jump to buffer
-nmap <leader>1 <Plug>BufTabLine.Go(1)
-nmap <leader>2 <Plug>BufTabLine.Go(2)
-nmap <leader>3 <Plug>BufTabLine.Go(3)
-nmap <leader>4 <Plug>BufTabLine.Go(4)
-nmap <leader>5 <Plug>BufTabLine.Go(5)
-nmap <leader>6 <Plug>BufTabLine.Go(6)
-nmap <leader>7 <Plug>BufTabLine.Go(7)
-nmap <leader>8 <Plug>BufTabLine.Go(8)
-nmap <leader>9 <Plug>BufTabLine.Go(9)
-nmap <leader>0 <Plug>BufTabLine.Go(10)
+" vim-buftabline: mappings
+noremap <C-h> :bprev<CR>
+noremap <C-l> :bnext<CR>
+
+" vim-wintabs: mappings
+"map <C-h> <Plug>(wintabs_previous)
+"map <C-l> <Plug>(wintabs_next)
+"map <C-t>q <Plug>(wintabs_close)
+"map <C-t>u <Plug>(wintabs_undo)
+"map <C-t>o <Plug>(wintabs_only)
+"map <C-w>c <Plug>(wintabs_close_window)
+"map <C-w>o <Plug>(wintabs_only_window)
+"command! Tabc <Plug>(wintabs_close_vimtab)
+"command! Tabo <Plug>(wintabs_only_vimtab)
