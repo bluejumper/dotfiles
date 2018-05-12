@@ -1,29 +1,29 @@
-"dein Scripts-----------------------------
+" dein scripts --
 if &compatible
   set nocompatible               " Be iMproved
 endif
 
-" Required:
+" Required
 set runtimepath+=/home/blue/.cache/dein/repos/github.com/Shougo/dein.vim
 
-" Required:
+" Required
 if dein#load_state('/home/blue/.cache/dein')
-  call dein#begin('/home/blue/.cache/dein')
+	call dein#begin('/home/blue/.cache/dein')
 
-  " Let dein manage dein
-  " Required:
-  call dein#add('/home/blue/.cache/dein/repos/github.com/Shougo/dein.vim')
+	" Let dein manage dein
+	" Required
+	call dein#add('/home/blue/.cache/dein/repos/github.com/Shougo/dein.vim')
 
-  " Add or remove your plugins here:
-  call dein#add('vim-airline/vim-airline')
-  call dein#add('fatih/vim-go')
+	" Add or remove your plugins here:
+	call dein#add('itchyny/lightline.vim')
+	call dein#add('fatih/vim-go')
 
-  " Required:
-  call dein#end()
-  call dein#save_state()
+	" Required
+	call dein#end()
+	call dein#save_state()
 endif
 
-" Required:
+" Required
 filetype plugin indent on
 syntax enable
 
@@ -32,14 +32,14 @@ syntax enable
 "  call dein#install()
 "endif
 
-"End dein Scripts-------------------------
-"
+" end dein scripts --
 
-" Options
 
+" Options --
 set termguicolors
 colorscheme molokai
-"
+set noshowmode
+
 " Keep backup and temp files in ~/.vim/tmp
 set backup
 set backupdir=~/.vim/tmp
@@ -53,10 +53,10 @@ augroup numbertoggle
 	autocmd BufLeave,FocusLost	* set norelativenumber
 augroup END
 
-" Variables
+" Variables --
 
-" NOTE- Use as keyboard shortcut instead.
+" NOTE- configure as keyboard shortcut instead.
 let g:go_fmt_command = "goimports"
 
-" Keybindings.
+" Keybindings --
 
