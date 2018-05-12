@@ -1,15 +1,3 @@
-set termguicolors
-set relativenumber
-
-colorscheme molokai
-
-" Keep backup and temp files in ~/.vim/tmp
-set backup
-set backupdir=~/.vim/tmp
-set dir=~/.vim/swp
-
-" Keybindings.
-
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
@@ -45,3 +33,30 @@ syntax enable
 "endif
 
 "End dein Scripts-------------------------
+"
+
+" Options
+
+set termguicolors
+colorscheme molokai
+"
+" Keep backup and temp files in ~/.vim/tmp
+set backup
+set backupdir=~/.vim/tmp
+set dir=~/.vim/swp
+
+" Show line numbers, relative number on focused buffer only.
+set number relativenumber
+augroup numbertoggle
+	autocmd!
+	autocmd BufEnter,FocusGained	* set relativenumber
+	autocmd BufLeave,FocusLost	* set norelativenumber
+augroup END
+
+" Variables
+
+" NOTE- Use as keyboard shortcut instead.
+let g:go_fmt_command = "goimports"
+
+" Keybindings.
+

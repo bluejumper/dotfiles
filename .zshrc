@@ -58,7 +58,7 @@ source $ZSH/oh-my-zsh.sh
 	alias rgr="ranger"
 	alias la="ls -lAh --color"
 	alias lss="ls -sh1 --color"
-	alias duu="du -hd 0"
+	alias duu="du -hd 1"
 	alias ip="ip -c"
 	alias hd="hexdump -C"
 	alias bc="bc -q"
