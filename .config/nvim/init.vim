@@ -16,7 +16,8 @@ if dein#load_state('/home/blue/.cache/dein')
 
 	" Add or remove your plugins here:
 	call dein#add('itchyny/lightline.vim')
-	call dein#add('fatih/vim-go')
+	call dein#add('ap/vim-buftabline')
+	"call dein#add('fatih/vim-go')
 
 	" Required
 	call dein#end()
@@ -34,8 +35,7 @@ syntax enable
 
 " end dein scripts --
 
-
-" Options --
+" Options (set) --
 set termguicolors
 colorscheme molokai
 set noshowmode
@@ -53,10 +53,8 @@ augroup numbertoggle
 	autocmd BufLeave,FocusLost	* set norelativenumber
 augroup END
 
-" Variables --
-
-" NOTE- configure as keyboard shortcut instead.
-let g:go_fmt_command = "goimports"
+" Variables (let) --
+" vim-buftabline
+ let g:buftabline_numbers = 1
 
 " Keybindings --
-
