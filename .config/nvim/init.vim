@@ -40,7 +40,6 @@ syntax enable
 set noshowmode " Disable editing mode display at bottom of tab.
 set hidden " Allow buffers to preserve modifications and state by becoming 'hidden'.
 set termguicolors
-colorscheme molokai
 
 " Keep backup and temp files in ~/.vim/tmp
 set backup
@@ -55,18 +54,19 @@ augroup numbertoggle
 	autocmd BufLeave,FocusLost	* set norelativenumber
 augroup END
 
+" Variables (let) --
+" vim-buftabline: display buffer number
+let g:buftabline_numbers = 1
+
 " Colour
+colorscheme molokai
 " vim-buftabline: suited for molokai.
-if exists('g:buftabline_numbers')
+if dein#is_sourced('vim-buftabline') == 1
 	hi BufTabLineCurrent	guifg=#F8F8F2	guibg=#111111 gui=bold
 	hi BufTabLineActive	guifg=#F8F8F2	guibg=#606060
 	hi BufTabLineHidden	guifg=#A0A0A0	guibg=#454545
 	hi BufTabLineFill			guibg=#303030
 endif
-
-" Variables (let) --
-" vim-buftabline: display buffer number
-let g:buftabline_numbers = 1
 
 " Keybindings --
 " vim-buftabline: mappings
