@@ -89,7 +89,13 @@ main() {
 	done; echo
 
 	# Begin.
-	for line in $(find . \( -path './.git' -o -path './.gitignore' -o -path './doln.sh' $(printf -- '-o -path %s ' $(grep -v '^#' .gitignore ${excludeFile} 2>&1)) \) -prune -o -type f -print | sed 's|^./||'); do
+	for line in $(find . \( \
+		-path './.git' \
+		-o -path './.gitignore' \
+		-o -path './doln.sh' \
+		-o -path './README.md' \
+		$(printf -- '-o -path %s ' $(grep -v '^#' .gitignore ${excludeFile} 2>&1)) \) -prune -o -type f -print | sed 's|^./||'); do
+
 		pathFile=${userHome}/${line}
 		repoFile=${repoPath}/${line}
 		echo
