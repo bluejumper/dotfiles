@@ -6,6 +6,13 @@ set termguicolors
 set backup
 set backupdir=~/.vim/tmp
 set dir=~/.vim/swp
+
+" Variables (let) --
+
+" Colour
+colorscheme molokai
+
+" Autocommands --
 " Show line numbers, relative number on focused buffer only.
 set number relativenumber
 augroup numbertoggle
@@ -13,16 +20,17 @@ augroup numbertoggle
 	autocmd BufEnter,FocusGained	* set relativenumber
 	autocmd BufLeave,FocusLost	* set norelativenumber
 augroup END
-
-" Variables (let) --
-
-" Colour
-colorscheme molokai
+" Store name of buffer that was last deleted.
+autocmd BufDelete * let g:latest_deleted_buffer = expand("<afile>:p")
 
 " Keybindings --
 " buffer mappings
 noremap <C-h> :bprev<CR>
 noremap <C-l> :bnext<CR>
+noremap <C-j> :bd<CR>
+" Restore the last deleted buffer.
+noremap <C-k> :edit <C-R>=fnameescape(g:latest_deleted_buffer)<CR><CR>
+
 
 " (add plugin sauce)
 source ~/.config/nvim/plugin.vim

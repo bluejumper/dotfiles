@@ -2,6 +2,8 @@ clear
 echo
 echo "Welcome back."
 echo
+echo "\“Failure is just practice for success.\” Unknown [Momentum 18/5/18]"
+echo
 cal
 echo
 fortune
