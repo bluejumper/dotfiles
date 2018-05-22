@@ -2,7 +2,9 @@ clear
 echo
 echo "Welcome back."
 echo
-echo "\“Failure is just practice for success.\” Unknown [Momentum 18/5/18]"
+echo "“Failure is just practice for success.” Unknown [Momentum 18/5/18]"
+echo
+echo "You can do it. How?"
 echo
 cal
 echo

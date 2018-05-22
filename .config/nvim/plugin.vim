@@ -17,6 +17,7 @@ if dein#load_state('/home/blue/.cache/dein')
 	" Add or remove your plugins here:
 	call dein#add('itchyny/lightline.vim')
 	call dein#add('ap/vim-buftabline')
+	call dein#add('vimwiki/vimwiki')
 	"call dein#add('zefei/vim-wintabs') " Doesn't play with lightline.vim
 	"call dein#add('fatih/vim-go')
 
@@ -45,4 +46,10 @@ if dein#is_sourced('vim-buftabline') == 1
 	hi BufTabLineActive	guifg=#F8F8F2	guibg=#606060
 	hi BufTabLineHidden	guifg=#A0A0A0	guibg=#454545
 	hi BufTabLineFill			guibg=#303030
+endif
+
+" (vimwiki)
+if dein#is_sourced('vimwiki') == 1
+	let g:vimwiki_list = [{'path': '~/Documents/pages',
+				\ 'syntax': 'markdown', 'ext': '.md' }]
 endif
