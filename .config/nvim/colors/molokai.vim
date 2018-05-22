@@ -26,6 +26,28 @@ else
     let s:molokai_original = 0
 endif
 
+if s:molokai_original == 1
+   hi Normal          guifg=#F8F8F2 guibg=#272822
+   hi Comment         guifg=#75715E
+   hi CursorLine                    guibg=#3E3D32
+   hi CursorColumn                  guibg=#3E3D32
+   hi LineNr          guifg=#BCBCBC guibg=#3B3A32
+   hi NonText         guifg=#BCBCBC guibg=#3B3A32
+else
+   hi Normal          guifg=#F8F8F2 guibg=#111111
+   hi Comment         guifg=#A0A0A0
+   hi ColorColumn                   guibg=#222222
+   hi CursorLine                    guibg=#293739
+   hi CursorColumn                  guibg=#293739
+   hi LineNr          guifg=#BCBCBC guibg=#232526
+   hi NonText         guifg=#BCBCBC guibg=#222222
+end
+
+" (vim-buftabline)
+hi BufTabLineCurrent	guifg=#F8F8F2	guibg=#111111 gui=bold
+hi BufTabLineActive	guifg=#F8F8F2	guibg=#606060
+hi BufTabLineHidden	guifg=#A0A0A0	guibg=#454545
+hi BufTabLineFill			guibg=#303030
 
 hi Boolean         guifg=#AE81FF
 hi Character       guifg=#E6DB74
@@ -105,23 +127,6 @@ hi VisualNOS                     guibg=#403D3D
 hi Visual                        guibg=#403D3D
 hi WarningMsg      guifg=#FFFFFF guibg=#333333 gui=bold
 hi WildMenu        guifg=#66D9EF guibg=#000000
-
-if s:molokai_original == 1
-   hi Normal          guifg=#F8F8F2 guibg=#272822
-   hi Comment         guifg=#75715E
-   hi CursorLine                    guibg=#3E3D32
-   hi CursorColumn                  guibg=#3E3D32
-   hi LineNr          guifg=#BCBCBC guibg=#3B3A32
-   hi NonText         guifg=#BCBCBC guibg=#3B3A32
-else
-   hi Normal          guifg=#F8F8F2 guibg=#111111
-   hi Comment         guifg=#A0A0A0
-   hi ColorColumn                   guibg=#222222
-   hi CursorLine                    guibg=#293739
-   hi CursorColumn                  guibg=#293739
-   hi LineNr          guifg=#BCBCBC guibg=#232526
-   hi NonText         guifg=#BCBCBC guibg=#222222
-end
 
 "
 " Support for 256-color terminal

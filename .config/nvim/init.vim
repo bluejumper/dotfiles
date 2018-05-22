@@ -1,6 +1,7 @@
 " Variables (let) --
 
 " Options (set) --
+colorscheme molokai
 set noshowmode " Disable editing mode display at bottom of tab.
 set hidden " Allow buffers to preserve modifications and state by becoming 'hidden'.
 set termguicolors
@@ -11,9 +12,6 @@ set backup
 set backupdir=~/.vim/tmp
 set dir=~/.vim/swp
 
-
-" Colour
-colorscheme molokai
 
 " Autocommands --
 " Show line numbers, relative number on focused buffer only.
@@ -27,6 +25,7 @@ augroup END
 autocmd BufDelete * let g:latest_deleted_buffer = expand("<afile>:p")
 " Use wordwrapping at column 80 for markdown documents.
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+
 
 " Keybindings --
 " buffer mappings
