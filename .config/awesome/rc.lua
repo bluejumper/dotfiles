@@ -57,9 +57,9 @@ editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal_exec .. editor
 
 -- System state commands.
-sys_lock = "physlock"
-sys_suspend = "physlock & systemctl suspend"
-sys_hibernate = "physlock & systemctl hibernate"
+sys_lock = "physlock -sp \";pvlrf.\""
+sys_suspend = "physlock -dsp \"wb & bw.\" && systemctl suspend"
+sys_hibernate = "physlock -dsp \"wb & bw.\" && systemctl hibernate"
 
 -- Tab environments.
 tab_audio = "termite -e \"watch -n 600 paplay ~/sh/ding.wav\" &"..
