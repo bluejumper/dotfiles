@@ -31,9 +31,9 @@ autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 " buffer mappings
 noremap <C-h> :bprev<CR>
 noremap <C-l> :bnext<CR>
-noremap <C-j> :bd<CR>
+noremap <C-x> :bd<CR>
 " Restore the last deleted buffer.
-noremap <C-k> :edit <C-R>=fnameescape(g:latest_deleted_buffer)<CR><CR>
+noremap <C-u> :edit <C-R>=fnameescape(g:latest_deleted_buffer)<CR><CR>
 
 
 " (add plugin sauce)
