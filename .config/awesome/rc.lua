@@ -532,6 +532,7 @@ awful.rules.rules = {
 	  "Gpick",
 	  "Spacefm",
 	  "uget-gtk",
+	  "SpeedCrunch",
   	},
 
         name = {
