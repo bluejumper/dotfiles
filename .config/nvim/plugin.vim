@@ -35,6 +35,6 @@ endif
 " (vimwiki)
 if dein#is_sourced('vimwiki') == 1
 	let g:vimwiki_conceallevel = 0 " vimwiki won't conceal any characters.
-	let g:vimwiki_list = [{'path': '~/Documents/pages',
+	let g:vimwiki_list = [{'path': '~/Documents/Wiki',
 				\ 'syntax': 'markdown', 'ext': '.md' }]
 endif
