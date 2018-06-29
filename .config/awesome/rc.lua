@@ -62,7 +62,7 @@ sys_suspend = "physlock -dsp \"wb & bw.\" && systemctl suspend"
 sys_hibernate = "physlock -dsp \"wb & bw.\" && systemctl hibernate"
 
 -- Tab environments.
-tab_audio = "termite -e \"watch -n 600 paplay ~/sh/ding.wav\" &"..
+tab_audio = "termite -e \"watch -n 600 paplay ~/sound/ding.wav\" &"..
 	"pavucontrol &"..
 	"audacious &"
 tab_management = "termite -e \"watch -n 2 --color ip -c addr\" &"..
