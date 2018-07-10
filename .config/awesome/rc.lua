@@ -57,7 +57,7 @@ editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal_exec .. editor
 
 -- System state commands.
-sys_lock = "physlock -sp \";pvlrf.\""
+sys_lock = "physlock -sp \";pvlrf/\""
 sys_suspend = "physlock -dsp \"wb & bw.\" && systemctl suspend"
 sys_hibernate = "physlock -dsp \"wb & bw.\" && systemctl hibernate"
 
