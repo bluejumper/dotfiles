@@ -11,6 +11,6 @@ echo "	\"Nothing is so fatiguing as the eternal hanging on of an uncompleted tas
 echo "	\"It takes as much energy to wish as it does to plan.\" - Eleanor Roosevelt"
 echo "	\"Don't put off for tomorrow what you can do today because if you enjoy it today, you can do it again tomorrow.\" - James A. Michener"
 echo "	\"The struggle ends when the gratitude begins.\" Neale Donald Walsch"
-echo "	\"Every moment you live in the past is a moment you waste in the present.\" Tony Robbins"
+echo "	\"Every moment you live in the past is a moment you waste in the present.\" - Tony Robbins"
 echo
 echo "	\"Let go of the thoughts that don't make you strong.\" Unknown [Momentum 20/3/18]"
