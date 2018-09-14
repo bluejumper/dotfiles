@@ -6,6 +6,7 @@ colorscheme molokai
 set noshowmode " Disable editing mode display at bottom of window.
 set hidden " Allow buffers to preserve modifications and state by becoming 'hidden'.
 set termguicolors
+set textwidth=0 " Disable wordwrapping.
 set colorcolumn=80 " Display a coloured line at the 80th column.
 set conceallevel=0 " No characters are hidden.
 set tabstop=8 " The number of spaces a tab character consumes.
@@ -26,7 +27,7 @@ augroup numbertoggle
 augroup END
 " Store name of buffer that was last deleted.
 autocmd BufDelete * let g:latest_deleted_buffer = expand("<afile>:p")
-" Use wordwrapping at column 80 for markdown documents.
+" Enable wordwrapping for markdown documents at column 80.
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
 " (Keybindings)
@@ -35,7 +36,7 @@ noremap <C-h> :bprev<CR>
 noremap <C-l> :bnext<CR>
 noremap <C-x> :bd<CR>
 " Restore the last deleted buffer.
-noremap <C-u> :edit <C-R>=fnameescape(g:latest_deleted_buffer)<CR><CR>
+noremap <C-c> :edit <C-R>=fnameescape(g:latest_deleted_buffer)<CR><CR>
 
 " (add plugin sauce)
 source ~/.config/nvim/plugin.vim
