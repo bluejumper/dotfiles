@@ -34,4 +34,4 @@ setxkbmap gb && xset r rate 200 40
 pgrep redshift &> /dev/null || redshift &> /dev/null &
 
 # Window manager.
-awesome
+xmonad
