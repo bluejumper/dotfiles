@@ -39,8 +39,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- spawn programs
     , ((modm,                           xK_Return), spawn $ XMonad.terminal conf) -- terminal
-    , ((modm,                           xK_x), spawn "dmenu_run") -- dmenu
-    -- , ((modm,                           xK_e), spawn "spacefm") -- dmenu
+    , ((modm,                           xK_x), spawn "dmenu_run") -- dmenu_run
+    , ((modm,                           xK_e), spawn "pcmanfm-qt") -- file manager
 
     -- actions
     , ((modm,                           xK_bracketleft), spawn "pactl set-sink-volume 0 -5%") -- adjust volume -5%
@@ -67,8 +67,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,                           xK_h), sendMessage Shrink) -- shrink master area
     , ((modm,                           xK_l), sendMessage Expand) -- expand master area
     -- window master no.
-    , ((modm,                           xK_period), sendMessage (IncMasterN 1)) -- increment no. of windows in master area
     , ((modm,                           xK_comma), sendMessage (IncMasterN (-1))) -- decrement no. of windows in master area
+    , ((modm,                           xK_period), sendMessage (IncMasterN 1)) -- increment no. of windows in master area
 
     -- general
     , ((modm,                           xK_b), sendMessage ToggleStruts) -- toggle status bar gap
@@ -77,17 +77,18 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- generate list of binds for:
     [
     ((mask .|. modm,                    key), windows $ f i)
-        | (i, key) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9] -- mod-[1..9], switch to workspace N
-        , (f, mask) <- [(W.greedyView, 0), (W.shift, shiftMask)] -- mod-shift-[1..9], move window to workspace N
+        | (i, key) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9] -- mod-[1..9], switch to workspace 1..9
+        , (f, mask) <- [(W.greedyView, 0), (W.shift, shiftMask)] -- mod-shift-[1..9], move window to workspace 1..9
     ]
+    {-
     ++
-
     -- generate list of binds for:
     [
-    ((modm .|. modm,                    key), screenWorkspace sc >>= flip whenJust (windows . f))
+    ((modm .|. mask,                    key), screenWorkspace sc >>= flip whenJust (windows . f))
         | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..] -- mod-{w,e,r}, switch to physical/Xinerama screens 1, 2 or 3
         , (f, mask) <- [(W.view, 0), (W.shift, shiftMask)] -- mod-shift-{w,e,r}, move window to screen 1, 2 or 3
     ]
+    -}
 
 -- mouse 
 myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
@@ -169,10 +170,61 @@ settings = def {
 -- (help text)
 helpText :: String
 helpText = unlines [
-    "Revised 15/9/18",
+    "# Binds",
+    "The modifier key is 'Super'.",
     "",
-    "The modifier key is 'Super'. Keybindings:",
+    "-- xmonad",
+    "mod-ctrl-q         exit xmonad",
+    "mod-ctrl-w         restart xmonad (having recompiled xmonad.hs)",
+    "mod-shift-/        display help text",
     "",
-    "-- ",
-    ""
+    "-- locking and system state",
+    "mod-ctrl-,         lock system",
+    "mod-ctrl-.         lock system then suspend",
+    "mod-ctrl-/         lock system then hibernate",
+    "",
+    "-- spawn programs",
+    "mod-return         terminal",
+    "mod-x              dmenu_run",
+    "mod-e              file manager",
+    "",
+    "-- actions",
+    "mod-[              adjust volume -5%",
+    "mod-]              adjust volume +5%",
+    "",
+    "-- window",
+    "mod-shift-q        close focused window",
+    "mod-n              resize viewed windows to correct size",
+    "mod-t              push window back into tiling",
+    "",
+    "mod-tab            move focus to next window",
+    "mod-j",
+    "mod-shift-tab      move focus to previous window",
+    "mod-k",
+    "mod-m              move focus to master window",
+    "",
+    "mod-shift-j        swap focused window with next window",
+    "mod-shift-k        swap focused window with previous window",
+    "mod-shift-m        swap focused window with master window",
+    "",
+    "mod-space          rotate through available layout algorithms",
+    "mod-shift-space    reset workspace layout algorithm to default",
+    "",
+    "mod-h              shrink master area",
+    "mod-l              expand master area",
+    "",
+    "mod-,              decrement no. of windows in master area",
+    "mod-.              increment no. of windows in master area",
+    "",
+    "-- general",
+    "mod-b              toggle status bar gap",
+    "",
+    "-- workspaces",
+    "mod-[1..9]         switch to workspace 1..9",
+    "mod-shift-[1..9]   move window to workspace 1..9",
+    "",
+    "-- mouse",
+    "mod-leftMouse      set selected window to floating and begin movement by mouse",
+    "mod-middleMouse    raise selected window to top of stack",
+    "mod-rightMouse     set selected window to floating and begin resizing by mouse"
     ]

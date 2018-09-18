@@ -27,7 +27,6 @@ export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # -- preferences
-	# vi-mode
 	#bindkey -e # zsh emacs-mode.
 	bindkey -v # zsh vi-mode!
 	export KEYTIMEOUT=10 # Delay between entering from 'viins' to 'vicmd'.
@@ -35,13 +34,13 @@ source $ZSH/oh-my-zsh.sh
 	bindkey -M viins '^[[3~' delete-char # Delete
 	bindkey -M viins '^[[H' beginning-of-line # Home
 	bindkey -M viins '^[[F' end-of-line # End
-	# / vi-mode
 
 # -- environment
 	# ZSH_CUSTOM=/path/to/new-custom-folder
 
-	export PATH=~/bin:$PATH # User binaries.
-	export PATH=~/go/bin:$PATH # Golang.
+	export PATH=$PATH:~/bin # User binaries.
+	export PATH=$PATH:~/go/bin # Golang, binaries installed with 'go get'.
+        export PATH=$PATH:~/.cabal/bin # Haskell, binaries installed with cabal.
 	export GOPATH=~/go
 
 	export EDITOR="nvim"
