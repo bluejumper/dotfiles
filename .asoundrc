@@ -1,0 +1,18 @@
+# Applications that support the ALSA API can communicate with the PulseAudio
+# server through the virtual ALSA device 'pulse', which uses the 'pulse' plugin.
+# This enables ALSA API operations to be PulseAudio compatible.
+
+pcm.pulse {
+  type pulse
+  fallback "sysdefault"
+  hint {
+    show on
+    description "Default ALSA Output (currently PulseAudio Sound Server)"
+  }
+}
+ctl.pulse {
+  type pulse
+  fallback "sysdefault"
+}
+
+# vim:set ft=alsaconf:
