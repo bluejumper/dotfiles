@@ -29,8 +29,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-# Keyboard and display.
-setxkbmap gb && xset r rate 200 40
+# Keyboard mapping and behaviour.
+setxkbmap gb; xset r rate 200 40
+# Redshift.
 pgrep redshift &> /dev/null || redshift &> /dev/null &
 
 # Window manager.
