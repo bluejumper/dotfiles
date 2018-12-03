@@ -1,7 +1,7 @@
 # zsh settings
 
 # Set name of the theme to load.
-ZSH_THEME="duly"
+ZSH_THEME="duly-oneline"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
