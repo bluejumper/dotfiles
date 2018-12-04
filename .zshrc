@@ -1,5 +1,8 @@
 # zsh settings
 
+# Get set, umask!
+umask 027
+
 # Set name of the theme to load.
 ZSH_THEME="duly-oneline"
 
