@@ -23,6 +23,9 @@ map D nextTab
 map J nextTab
 map K previousTab
 
+" Unmap tab-close key.
+unmap x
+
 " Point to local config.
 let homedirectory="/home/blue"
 let configpath="~/.config/.cVimrc"
