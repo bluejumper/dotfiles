@@ -30,23 +30,23 @@ export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # -- preferences
-	#bindkey -e # zsh emacs-mode.
-	bindkey -v # zsh vi-mode!
-	export KEYTIMEOUT=10 # Delay between entering from 'viins' to 'vicmd'.
+        #bindkey -e # zsh emacs-mode.
+        bindkey -v # zsh vi-mode!
+        export KEYTIMEOUT=10 # Delay between entering from 'viins' to 'vicmd'.
 
-	bindkey -M viins '^[[3~' delete-char # Delete
-	bindkey -M viins '^[[H' beginning-of-line # Home
-	bindkey -M viins '^[[F' end-of-line # End
+        bindkey -M viins '^[[3~' delete-char # Delete
+        bindkey -M viins '^[[H' beginning-of-line # Home
+        bindkey -M viins '^[[F' end-of-line # End
 
 # -- environment
-	# ZSH_CUSTOM=/path/to/new-custom-folder
+        # ZSH_CUSTOM=/path/to/new-custom-folder
 
-	export PATH=$PATH:~/bin # User binaries.
-	export PATH=$PATH:~/go/bin # Golang, binaries installed with 'go get'.
+        export PATH=$PATH:~/bin # User binaries.
+        export PATH=$PATH:~/go/bin # Golang, binaries installed with 'go get'.
         export PATH=$PATH:~/.cabal/bin # Haskell, binaries installed with cabal.
-	export GOPATH=~/go
+        export GOPATH=~/go
 
-	export EDITOR="nvim"
+        export EDITOR="nvim"
 
 # -- named directory hash table additions
         hash -d repo=${HOME}/repo/
@@ -55,16 +55,16 @@ source $ZSH/oh-my-zsh.sh
         hash -d mount=/run/media/${USER}/
 
 # -- aliases
-	alias minecraft="~sh/minecraft.sh"
-	alias rgr="ranger"
-	alias la="ls -lAh --color"
-	alias lss="ls -sh1 --color"
-	alias duu="du -hd 1"
-	alias ip="ip -c"
-	alias hd="hexdump -C"
-	alias bc="bc -q"
+        alias minecraft="~sh/minecraft.sh"
+        alias rgr="ranger"
+        alias la="ls -lAh --color"
+        alias lss="ls -sh1 --color"
+        alias duu="du -hd 1"
+        alias ip="ip -c"
+        alias hd="hexdump -C"
+        alias bc="bc -q"
         alias udc="udisksctl"
-	#alias ku="kubectl"
+        #alias ku="kubectl"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
