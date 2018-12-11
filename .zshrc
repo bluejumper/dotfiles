@@ -48,14 +48,13 @@ source $ZSH/oh-my-zsh.sh
 
 	export EDITOR="nvim"
 
+# -- named directory hash table additions
+        hash -d repo=${HOME}/repo/
+        hash -d sh=${HOME}/sh/
+
+        hash -d mount=/run/media/${USER}/
+
 # -- aliases
-	# directories: ~alias
-	hash -d Git=/home/${USER}/Git
-	hash -d sh=/home/${USER}/sh
-
-	hash -d mnt=/run/media/${USER}/
-
-	# commands: alias
 	alias minecraft="~sh/minecraft.sh"
 	alias rgr="ranger"
 	alias la="ls -lAh --color"
@@ -64,6 +63,7 @@ source $ZSH/oh-my-zsh.sh
 	alias ip="ip -c"
 	alias hd="hexdump -C"
 	alias bc="bc -q"
+        alias udc="udisksctl"
 	#alias ku="kubectl"
 
 # Compilation flags
