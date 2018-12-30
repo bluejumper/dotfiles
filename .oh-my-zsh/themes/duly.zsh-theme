@@ -5,6 +5,14 @@ for COLOUR in CYAN WHITE YELLOW MAGENTA BLACK BLUE RED DEFAULT GREEN GRAY; do
 done
 c_RESET="%{$reset_color%}"
 
+# Test for...
+t_string=""
+# SSH
+t_SSH="${cb_GREEN}ssh${c_RESET}"
+[ ! -z $SSH_CONNECTION ] && t_string+="${t_SSH}"
+# ...then if any tests passed, display the prompt and those tests, or nothing.
+tests="${t_string:+${c_YELLOW}[${c_RESET}${t_string}${c_YELLOW}]${c_RESET} }"
+
 # PROMPT sections
 user_host="${c_RED}[${c_RESET}%n @%M${c_RED}]${c_RESET}"
 directory="${c_CYAN}[${c_RESET} %/ ${c_CYAN}]${c_RESET}"
@@ -30,7 +38,7 @@ zle-line-init zle-keymap-select () {
 # Do prompt
 set_prompt () {
     PROMPT='
- -- ${user_host} ${directory} ${mode}
+ -- ${user_host} ${tests}${directory} ${mode}
  ${mode2} ${input}'
 
     RPROMPT='${exit_code} ${jobs} ${time}'
