@@ -7,7 +7,7 @@ Config {
     -- appearance
     , position = Top
 
-    , font = "xft:Inconsolata-10"
+    , font = "xft:Inconsolata-8"
     , additionalFonts = []
 
     , borderColor = "black"
