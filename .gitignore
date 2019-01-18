@@ -20,7 +20,6 @@
 # Directories.
 .config/chromium
 .config/qutebrowser
-.config/ranger
 .config/nvim/repos
 .config/nvim/ftdetect
 .config/nvim/syntax
