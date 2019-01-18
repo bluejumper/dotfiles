@@ -13,7 +13,7 @@ echo "-- doln.sh --"
 preflight() {
 	# Conditions to reject.
 	if [ ! -d '.git' ]; then echo "EXIT (preflight): execute this script within a git repository"; exit 1; fi
-	if [ ! ${#BASH_ARGV[@]} -eq 1 ]; then echo "EXIT (preflight): supply only a username to this script."; exit 1; fi
+	if [ ! $numberOfArgs -eq 1 ]; then echo "EXIT (preflight): supply only a username to this script."; exit 1; fi
 
 	# Conditions to warn.
 	if [ ! -d '.config' ]; then echo "WARNING (preflight): before continuing, please verify that this script is used within a dotfile repository."; fi
@@ -60,6 +60,7 @@ backup() {
 }
 
 export args=($@)
+export numberOfArgs=($#)
 user=$1
 userHome=/home/${user}
 repoPath=$(pwd)
@@ -94,6 +95,7 @@ main() {
 		-o -path './.gitignore' \
 		-o -path './doln.sh' \
 		-o -path './README.md' \
+                -o -path './LICENSE' \
 		$(printf -- '-o -path %s ' $(grep -v '^#' .gitignore ${excludeFile} 2>&1)) \) -prune -o -type f -print | sed 's|^./||'); do
 
 		pathFile=${userHome}/${line}
