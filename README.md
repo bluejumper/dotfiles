@@ -26,4 +26,5 @@ Why do I track files in the /home directory?
 
 As per the LICENSE file, this repository has been introduced into the Public
 domain. You are free to review and use the contents for whatever purpose without
-attribution. I intend to share this repository and enable it to assist others.
+attribution. I intend to share this repository and enable others to learn from
+it.
