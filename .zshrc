@@ -49,10 +49,11 @@ source $ZSH/oh-my-zsh.sh
         export EDITOR="nvim"
 
 # -- named directory hash table additions
-        hash -d repo=${HOME}/repo/
-        hash -d sh=${HOME}/sh/
+        hash -d mount=/mnt/user/${USER}/
 
-        hash -d mount=/run/media/${USER}/
+        hash -d repo=${HOME}/repo/
+        hash -d src=${HOME}/src/
+        hash -d sh=${HOME}/sh/
 
 # -- aliases
         alias minecraft="~sh/minecraft.sh"
