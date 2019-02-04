@@ -3,6 +3,9 @@
 # that of the primary client. The programs should be executed in the background
 # if they do not exit right away, to avoid stalling the .xinitrc script.
 
+# Set the keyboard layout.
+setxkbmap gb
+
 # Execute Redshift if not already running.
 pgrep redshift &> /dev/null || redshift &> /dev/null &
 # Execute udiskie if not already running.
