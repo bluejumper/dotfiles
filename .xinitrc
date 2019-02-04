@@ -1,9 +1,12 @@
 #!/bin/sh
+# Configure the executed X Window System server, then start the primary client
+# program. The script will continue when the primary client exits, indicating
+# that the user has finished and that xinit should now exit.
 
-userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
-sysresources=/etc/X11/xinit/.Xresources
-sysmodmap=/etc/X11/xinit/.Xmodmap
+systemResources=/etc/X11/xinit/.Xresources
+systemModmap=/etc/X11/xinit/.Xmodmap
+userResources=${HOME}/.Xresources
+userModmap=${HOME}/.Xmodmap
 
 # System resources & keyboard mappings.
 #if [ -f $sysresources ]; then
@@ -13,15 +16,15 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 #    xmodmap $sysmodmap
 #fi
 
-# Home-directory resources & keyboard mappings.
-if [ -f "$userresources" ]; then
-    xrdb -merge "$userresources"
+# User resources & keyboard mappings.
+if [ -f "$userResources" ]; then
+    xrdb -merge "$userResources"
 fi
-if [ -f "$usermodmap" ]; then
-    xmodmap "$usermodmap"
+if [ -f "$userModmap" ]; then
+    xmodmap "$userModmap"
 fi
 
-# Run xinit scripts.
+# Run system xinitrc scripts.
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
   [ -x "$f" ] && . "$f"
@@ -29,10 +32,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-# Keyboard mapping and behaviour.
-setxkbmap gb; xset r rate 200 40
-# Redshift.
-pgrep redshift &> /dev/null || redshift &> /dev/null &
+# Execute programs before the primary client.
+# [ -f /etc/X11/xprofile ] && . /etc/X11/xprofile
+[ -f ${HOME}/.xprofile ] && . ${HOME}/.xprofile
 
-# Window manager.
-xmonad
+# Execute the primary client in the foreground.
+exec xmonad

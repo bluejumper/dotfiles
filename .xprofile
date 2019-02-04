@@ -1,0 +1,13 @@
+#!/bin/sh
+# Execute programs after the execution of the X Window System server, but before
+# that of the primary client. The programs should be executed in the background
+# if they do not exit right away, to avoid stalling the .xinitrc script.
+
+# Execute Redshift if not already running.
+pgrep redshift &> /dev/null || redshift &> /dev/null &
+# Execute udiskie if not already running.
+#pgrep udiskie &> /dev/null || udiskie &> /dev/null &
+# -c ~/.config/udiskie/config.yml --automount --notify --no-password-prompt --no-tray
+
+# xmobar.
+xmobar ~/.xmonad/xmobar.hs &
